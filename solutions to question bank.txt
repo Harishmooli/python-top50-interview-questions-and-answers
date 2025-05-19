@@ -1,0 +1,522 @@
+1. Write a Python program to sum all the items in a list. 
+
+Ans.
+a=[10,20,30,40,50,60]
+b=0
+for value in a:
+    b=b+value
+print(b)
+    
+
+2. Write a Python program to multiply all the items in a list.
+
+b=1
+for value in c:
+    b=b*value
+print(b)
+
+3.Write a Python program to get the largest number from a list.
+Ans.
+d=[10,20,30,175,40,50,60]
+largest=d[0]
+for value in d:
+    if value>largest:
+        largest=value
+        
+print(largest)
+
+4.Write a Python program to get the smallest number from a list.
+
+Ans.1
+smallest=d[0]
+for value in d:
+    if value < smallest:
+        smallest=value
+print(smallest)
+
+2.import functools as ft
+
+a=ft.reduce(lambda x,y:x if x<y else y  ,d)
+
+
+5.Write a Python program to count the number of strings where the string length is 2 or more and the first and last character are same from a given list of strings.
+Ans.
+e=['abc', 'xyz', 'aba', '1221',"dad","mam"]
+for word in e:
+    if len(word)>=2:
+        if word[0]==word[-1]:
+            print(word)
+6. Write a Python program to get a list, sorted in increasing order by the last element in each tuple from a given list of non-empty tuples. 
+1.	a=[(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]
+res=sorted(a,key=lambda x:x[1])
+print(res)
+
+2.a.sort(key=lambda x:x[1])
+
+7. Write a Python program to remove duplicates from a list. 
+
+b=list(set(a))
+print(b)
+8. Write a Python program to check a list is empty or not. 
+
+Ans.
+e=[]
+if len(e)==0:
+    print("list is empty")
+else:
+    print("list is non empty")
+9. Write a Python program to clone or copy a list.
+Ans.
+c=b.copy()
+d=b
+e=b[:]
+print("value of b {} and address{}".format(b,id(b)))
+print(c,id(c))
+print(d,id(d))
+print(e,id(e))
+
+10.Write a Python program to find the list of words that are longer than n from a given list of words.
+ans.n = input("enter list of words and ! to stop")
+words = []
+while (True):
+    value = input()
+
+    if (value == "!"):
+        break
+    else:
+        words.append(value)
+print(words)
+wordsdict={}
+for word in words:
+    wordsdict[word]=len(word)
+print(wordsdict)
+maxlen=max(wordsdict.values())
+for k,v in wordsdict.items():
+    if maxlen==v:
+        
+        print(k)
+
+11.Write a Python function that takes two lists and returns True if they have at least one common member.
+
+Ans.def commn_values(l1,l2):
+    result=False
+    for x in l1:
+        for y in l2:
+            if(x==y):
+                result=True
+                return result
+
+a=commn_values([1,2,3,4,5],[5,6,7,8])
+print(a)
+
+12.Write a Python program to print a specified list after removing the 0th, 4th and 5th elements. 
+
+a= ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+
+x=[a[i]    for i,v in enumerate(a)  if i not in (0,4,5)]
+
+print(x)
+
+13. Write a Python program to generate a 3*4*6 3D array whose each element is *.
+
+ans.array=[[['*' for col in range(6)]   for col in range(4)]for row in range(3)]
+
+print(array)
+
+14.Write a Python program to print the numbers of a specified list after removing even numbers from it.
+ans.a=[int(value)      for value in input().split()]
+
+print(a)
+nps=[]
+for value in a:
+    if(value%2==0):
+        continue
+    nps.append(value)
+print(nps)
+15. Write a Python program to shuffle and print a specified list.
+Ans.from random import shuffle
+
+color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+
+shuffle(color)
+
+print(color)
+
+lst=list()
+
+17. Write a Python program to generate and print a list except for the first 5 elements, where the values are square of numbers between 1 and 30 (both included). 
+
+for i in range(1,31):
+    lst.append(i**2)
+print(lst[:5])
+print(lst[25:])
+
+18.Write a Python program to generate all permutations of a list in Python.
+import itertools
+
+print(list(itertools.permutations([1,2,3])))
+
+
+19.Write a Python program to get the difference between the two lists.
+
+list1 = [1, 3, 5, 7, 9]
+list2 = [1, 2, 4, 6, 7, 8]
+diff1=list(set(list1)- set(list2))
+print(diff1)
+diff2=list(set(list2)- set(list1))
+print(diff2)
+print(diff1+diff2)
+
+20.Write a Python program access the index of a list.
+list1 = [1, 3, 5, 7, 9]
+for i,v in enumerate(list1):
+    print(i,"===",v)
+
+21. Write a Python program to convert a list of characters into a string.
+list1 = ['h','a','r','i']
+b=''.join(list1)
+print(b)
+
+22. Write a Python program to find the index of an item in a specified list.
+num = [10, 30, 4, -6]
+n=int(input("enter select value from list:"))
+ind=num.index(n)
+print("value of {} index is {}".format(n,ind))
+
+23. Write a Python program to flatten a shallow list. 
+
+ans. li = [[10, 20, 30, 40], [50, 60, 70, 80], [90, 100, 110, 120]]
+fl_lst=[]
+for lst in li:
+    for value in lst:
+        fl_lst.append(value)
+print(fl_lst)
+
+ans2.
+flst=[y     for x in li  for y in x]
+print(flst)
+
+24. Write a Python program to append a list to the second list. 
+list1 = [1, 2, 3, 0]
+list2 = ['Red', 'Green', 'Black']
+list3=list1 + list2
+print(list3)
+list1.extend(list2)
+print(list1)
+25. Write a Python program to select an item randomly from a list. 
+import random
+color_list = ['Red', 'Blue', 'Green', 'White', 'Black']
+print(random.choice(color_list))
+
+26. Write a python program to check whether two lists are circularly identical.
+
+
+27.Write a Python program to find the second smallest number in a list. 
+li=[5,6,7,23,45,76,2]
+
+li.sort()
+print("second smallest number is {}".format(li[1]))
+28. Write a Python program to find the second largest number in a list. 
+li=[5,6,7,23,45,76,2]
+li.sort()
+print(li)
+print("second largest number is {}".format(li[-2]))
+
+29. Write a Python program to get unique values from a list.
+ans.
+li=[5,6,7,23,45,76,2,6,7,23]
+
+li.sort()
+print(set(li))
+
+30. Write a Python program to get the frequency of the elements in a list. 
+
+import collections
+
+my_list = [10, 10, 10, 10, 20, 20, 20, 20, 40, 40, 50, 50, 30]
+
+cnt=collections.Counter(my_list)
+
+print(cnt)
+
+
+
+31. Write a Python program to count the number of elements in a list within a specified range. 
+Ans.
+def num_in_list(lst,min,max):
+    cnt=0
+    for x in lst:
+        if min <=x <=max:
+            cnt=cnt+1
+    return cnt
+
+
+list1 = [10, 20, 30, 40, 40, 40, 70, 80, 99]
+
+a=num_in_list(list1,80,200)
+print(a)
+
+32. Write a Python program to check whether a list contains a sublist.
+
+
+
+
+
+33. Write a Python program to generate all sublists of a list. 
+
+34. Write a Python program to create a list by concatenating a given list which range goes from 1 to n.
+ans.
+my_list=["h","a"]
+n=5
+final_list=['{}{}'.format(x,y) for y in range(1,n+1)  for x in my_list]
+print(final_list)
+
+35. Write a Python program to get variable unique identification number or string. 
+
+x=100
+n='w3source'
+
+print("address is {}".format(id(x)))
+
+print("address is {}".format(id(n)))
+
+36. Write a Python program to find common items from two lists.
+Ans.color1 = ["Red", "Green", "Orange", "White"]
+color2 = ["Black", "Green", "White", "Pink"]
+common_values=set(color1).intersection(set(color2))
+print(common_values)
+
+37.Write a Python program to change the position of every n-th value with the (n+1)th in a list. 
+
+
+38. Write a Python program to convert a list of multiple integers into a single integer. 
+
+l = [11, 33, 50]
+n=''.join(map(str,l))
+print(n)
+
+39.Write a Python program to split a list based on first character of word.      
+
+from itertools import groupby
+from operator import itemgetter
+word_list = ['be', 'have', 'do', 'say', 'get', 'make', 'go', 'know', 'take', 'see', 'come', 'think',
+             'look', 'want', 'give', 'use', 'find', 'tell', 'ask', 'work', 'seem', 'feel', 'leave', 'call']
+for letter, words in groupby(sorted(word_list), key=itemgetter(0)):
+    print(letter)
+    for word in words:
+        print(word)
+
+40. Write a Python program to create multiple lists.
+a={}
+for i in range(1,21):
+    a[str(i)]=[]
+
+print(a)
+
+41. Write a Python program to find missing and additional values in two lists.
+
+list1 = ['a', 'b', 'c', 'd', 'e', 'f']
+list2 = ['d', 'e', 'f', 'g', 'h']
+
+print("additional values in list2")
+
+addi_values=set(list2).difference(set(list1))
+print(addi_values)
+
+print("missing values in list2")
+miss_values=set(list1).difference(set(list2))
+print(miss_values)
+
+
+42. Write a Python program to split a list into different variables. 
+color = [
+    ("Black", "#000000", "rgb(0, 0, 0)"),
+    ("Red", "#FF0000", "rgb(255, 0, 0)"),
+    ("Yellow", "#FFFF00", "rgb(255, 255, 0)")
+]
+var1, var2, var3 = color
+print(var1)
+
+print(var2)
+
+print(var3)
+============================================================
+43.swapping variable values using bitwise operator.
+Ans.
+a=10
+b=20
+print(" before swapping a value is {}".format(a))
+print("before swapping b value is {}".format(b))
+a=a^b
+b=a^b
+a=a^b
+print(" after swapping a value is {}".format(a))
+print("after swapping b value is {}".format(b))
+
+44.Check number is even or add using bitwise operator.
+a=int(input("enter a number"))
+if(a&1==0):
+    print("{} is even".format(a))
+elif(a&1==1):
+    print("{} is odd number".format(a))
+
+45.Check the number is prime or not.
+
+n=int(input("enter a number:\t"))
+cnt = 0
+for i in range(1,n+1):
+    if(n%i==0):
+        cnt=cnt+1
+if(cnt==2):
+
+    print("{} is prime".format(n))
+else:
+    print("{} is not prime".format(n))
+
+46.Count of digits in number.
+
+n=int(input("enter a number:\t"))
+cnt = 0
+while n>0:
+    n=n//10
+    cnt=cnt+1
+print(cnt)
+
+47.how to interchange first and last digits in number.
+
+list1=list(range(0,12))
+print(list1)
+list1[0],list1[-1]=list1[-1],list1[0]
+print(list1)
+
+48.cyclic rotation of values.
+
+Ans.def cyclic(lst,a):
+
+    return lst[-a:]+lst[:-a]
+
+d=cyclic([5,4,7,8,9,10],2)
+print(d)
+
+49.Write a Python program to select the odd items of a list. 
+x = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+for value in x:
+    if(value%2!=0):
+        print(value)
+
+
+50. Write a Python program to insert an element before each element of a list.
+Ans.
+color = ['Red', 'Green', 'Black',"yellow"]
+
+updated_color=[ v   for elt in color for v in('hari',elt)]
+
+print(updated_color)
+
+
+51.Find max value in list.
+Ans.
+a=[10,23,45,67,97,3,5,2]
+
+largest=a[0]
+
+for value in a:
+    if value>largest:
+        largest=value
+print(largest)
+
+Ans.
+a=[10,23,45,67,97,3,5,2]
+import functools as fc
+
+a=fc.reduce(lambda x,y:x if x>y else y,a)
+
+print(a)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
